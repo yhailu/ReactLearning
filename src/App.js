@@ -18,4 +18,38 @@ class App extends Component {
   }
 }
 
+class HelloUser extends Component{
+  constructor(props){
+    super(props)
+
+    this.state = {
+      username: 'yhailu'
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+
+  }
+
+  handleChange(e){
+    this.setState({
+      username: e.target.value
+    })
+  }
+  render(){
+    return(
+      <div>
+        Hello {this.state.username} <br/>
+        Change name:
+          <input
+            type = "text"
+            value={this.state.username}
+            onChange={this.handleChange}
+            />
+      </div>
+
+    );
+  }
+}
+
+export {HelloUser}
 export default App;
